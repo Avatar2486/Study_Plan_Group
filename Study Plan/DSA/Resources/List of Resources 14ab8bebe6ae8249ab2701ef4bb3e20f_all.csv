@@ -1,0 +1,18 @@
+﻿Topic,Priority,Status
+Heap (Priority Queue),High,Not started
+Kadane,High,Done
+Graph,High,Not started
+Dutch National Fl,High,Not started
+Dynamic Programming,High,Not started
+Prefix Sum,High,Done
+Greedy,High,Not started
+Trie,Medium,Not started
+Backtracking,Medium,Not started
+Two Pointers,High,Done
+Sliding Window (Fixed & Variable),High,Done
+Linked List,High,Done
+Stack & Monotonic Stack,High,Done
+Queue & Deque,High,Done
+Sorting,High,Done
+Binary Search,High,Done
+Tree,High,In progress
