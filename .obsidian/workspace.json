@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study Plan/Node JS.md",
+                "file": "Study Plan/Python.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Node JS"
+              "title": "Python"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study Plan/Node JS.md",
+                "file": "Study Plan/Python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Node JS"
+              "title": "Backlinks for Python"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study Plan/Node JS.md",
+                "file": "Study Plan/Python.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Node JS"
+              "title": "Outgoing links from Python"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study Plan/Node JS.md",
+                "file": "Study Plan/Python.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Node JS"
+              "title": "Outline of Python"
             }
           }
         ]
@@ -185,8 +185,10 @@
   },
   "active": "105d70bad47666b0",
   "lastOpenFiles": [
-    "Study Plan.md",
+    "Study Plan/Python Main Topics.md",
+    "Study Plan/Python.md",
     "Study Plan/Node JS.md",
+    "Study Plan.md",
     "Study Plan/Node JS AI.md",
     "Study/refs/tags",
     "Study/refs/heads",
@@ -199,7 +201,6 @@
     "Study/hooks/prepare-commit-msg.sample",
     "Study/hooks/pre-receive.sample",
     "Untitled.canvas",
-    "Study Plan/Python.md",
     "Study Plan/HTML CSS JS.md",
     "Study Plan/DSA/Resources.md",
     "Study Plan/DSA.md",
@@ -220,7 +221,6 @@
     "Study Plan/DSA/Resources/List of Resources/Dynamic Programming.md",
     "Study Plan/DSA/Resources/List of Resources/Dutch National Fl.md",
     "Study Plan/DSA/Resources/List of Resources/Binary Search.md",
-    "Study Plan/DSA/Resources/Cheat Sheet.md",
-    "Study Plan/Apache Airflow.md"
+    "Study Plan/DSA/Resources/Cheat Sheet.md"
   ]
 }
