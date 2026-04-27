@@ -183,8 +183,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "24ae955b0bb7d4d6",
+  "active": "105d70bad47666b0",
   "lastOpenFiles": [
+    "Study Plan.md",
+    "Study Plan/Node JS.md",
+    "Study Plan/Node JS AI.md",
     "Study/refs/tags",
     "Study/refs/heads",
     "Study/objects/pack",
@@ -195,12 +198,9 @@
     "Study/hooks/push-to-checkout.sample",
     "Study/hooks/prepare-commit-msg.sample",
     "Study/hooks/pre-receive.sample",
-    "Study/hooks/pre-rebase.sample",
     "Untitled.canvas",
     "Study Plan/Python.md",
     "Study Plan/HTML CSS JS.md",
-    "Study Plan.md",
-    "Study Plan/Node JS.md",
     "Study Plan/DSA/Resources.md",
     "Study Plan/DSA.md",
     "Study Plan/DSA/Resources/List of Resources/Backtracking.md",
