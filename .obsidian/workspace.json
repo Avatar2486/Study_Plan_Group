@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study Plan/Python.md",
+                "file": "Study Plan/Personal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Python"
+              "title": "Personal"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study Plan/Python.md",
+                "file": "Study Plan/Personal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Python"
+              "title": "Backlinks for Personal"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study Plan/Python.md",
+                "file": "Study Plan/Personal.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Python"
+              "title": "Outgoing links from Personal"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study Plan/Python.md",
+                "file": "Study Plan/Personal.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Python"
+              "title": "Outline of Personal"
             }
           }
         ]
@@ -185,8 +185,11 @@
   },
   "active": "105d70bad47666b0",
   "lastOpenFiles": [
-    "Study Plan/Python Main Topics.md",
+    "Study Plan/PostgreSQL.md",
+    "Study Plan/Personal.md",
+    "Study Plan/ReactJS.md",
     "Study Plan/Python.md",
+    "Study Plan/Python Main Topics.md",
     "Study Plan/Node JS.md",
     "Study Plan.md",
     "Study Plan/Node JS AI.md",
@@ -218,9 +221,6 @@
     "Study Plan/DSA/Resources/List of Resources/Heap (Priority Queue).md",
     "Study Plan/DSA/Resources/List of Resources/Greedy.md",
     "Study Plan/DSA/Resources/List of Resources/Graph.md",
-    "Study Plan/DSA/Resources/List of Resources/Dynamic Programming.md",
-    "Study Plan/DSA/Resources/List of Resources/Dutch National Fl.md",
-    "Study Plan/DSA/Resources/List of Resources/Binary Search.md",
-    "Study Plan/DSA/Resources/Cheat Sheet.md"
+    "Study Plan/DSA/Resources/List of Resources/Dynamic Programming.md"
   ]
 }
