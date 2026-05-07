@@ -13,18 +13,18 @@ Backtracking problems can be broken down into several core **patterns**. Here's 
 
 ### 🔹 BACKTRACKING CORE PATTERNS
 
-| Pattern | Description |
-| --- | --- |
-| **1. Subsets** | Include/exclude decision at each step |
-| **2. Permutations** | All arrangements of elements |
-| **3. Combinations** | Select `k` items from `n` |
-| **4. Palindromes** | Partitioning or checking strings |
-| **5. N-Queens / Grid Search** | Placing items on 2D grid with constraints |
-| **6. Word/Path Search in Matrix** | DFS + backtracking |
-| **7. Expression Add Operators** | Explore math expressions recursively |
-| **8. Coloring / Graph State** | Coloring nodes or solving constraint satisfaction |
-| **9. Bitmask Backtracking** | Optimize recursive state using bitmask |
-| **10. Constraint Pruning** | Add conditions to reduce recursion (e.g., Sudoku) |
+| Pattern                           | Description                                       |     |
+| --------------------------------- | ------------------------------------------------- | --- |
+| **1. Subsets**                    | Include/exclude decision at each step             |     |
+| **2. Permutations**               | All arrangements of elements                      |     |
+| **3. Combinations**               | Select `k` items from `n`                         |     |
+| **4. Palindromes**                | Partitioning or checking strings                  |     |
+| **5. N-Queens / Grid Search**     | Placing items on 2D grid with constraints         |     |
+| **6. Word/Path Search in Matrix** | DFS + backtracking                                |     |
+| **7. Expression Add Operators**   | Explore math expressions recursively              |     |
+| **8. Coloring / Graph State**     | Coloring nodes or solving constraint satisfaction |     |
+| **9. Bitmask Backtracking**       | Optimize recursive state using bitmask            |     |
+| **10. Constraint Pruning**        | Add conditions to reduce recursion (e.g., Sudoku) |     |
 
 ---
 
