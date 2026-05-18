@@ -24,6 +24,10 @@
 
 [PostgreSQL](PostgreSQL.md)
 
+[MySQL](MySQL.md)
+
+[MongoDB](MongoDB.md)
+
 [Spring Core](Spring%20Core.md)
 
 [Hibernate ](Hibernate.md)
@@ -56,6 +60,8 @@
 
 [HTML/CSS/JS](HTML%20CSS%20JS.md)
 
+[Angular](Angular.md)
+
 [ReactJS](ReactJS.md)
 
 [AWS](AWS.md)
@@ -63,3 +69,9 @@
 [Personal Tips](Personal.md)
 
 [Flowable ](Flowable.md)
+
+[AI / ML](AI%20ML.md)
+
+[AI Tools (Build Apps Faster)](AI%20Tools.md)
+
+[Interview Answers](Interview%20Answers/README.md)

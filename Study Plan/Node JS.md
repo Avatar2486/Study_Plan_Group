@@ -7,6 +7,7 @@
 ### 🧱 Building Blocks
 
 - What is Node.js? V8 engine, libuv, event-driven architecture
+- What is Event Loop ? In that what is callback queue, callStack and how it have Non - Blocking Nature
 - Node.js vs Browser JavaScript (window, DOM, process, fs)
 - REPL, running scripts (`node app.js`), shebang lines
 - `process` object (`argv`, `env`, `cwd`, `exit`, `pid`, `version`)

@@ -1,249 +1,166 @@
 # PostgreSQL
 
-### [https://neon.tech/postgresql/tutorial](https://neon.tech/postgresql/tutorial): Study Queries & Practical
+> Reference: [neon.tech/postgresql/tutorial](https://neon.tech/postgresql/tutorial)
 
 ---
 
-## **🔥 1. Core PostgreSQL Concepts**
+## 🔰 **1. Core Concepts & Data Types**
 
-### **Core Topics**
-
-✅ **What is PostgreSQL? Why is it different from other RDBMS?**
-
-✅ **PostgreSQL Data Types (Numeric, Character, Boolean, Date/Time, JSON, Arrays, hstore, ENUM, UUID, Geometric)**
-
-✅ **PostgreSQL Schema, Tables, and Constraints (Primary Key, Foreign Key, Unique, Check, NOT NULL, DEFAULT)**
-
-✅ **Normalization (1NF, 2NF, 3NF, BCNF, 4NF, 5NF) and Denormalization**
-
-✅ **Views, Materialized Views, and Temporary Tables**
-
-✅ **Stored Procedures, Functions, and Triggers**
-
-### **Practice Questions**
-
-1️⃣ What are **the key differences between PostgreSQL and MySQL?**
-
-2️⃣ How does **PostgreSQL handle composite types and arrays?**
-
-3️⃣ What is **the difference between a View and a Materialized View?**
-
-### **Hands-On Practice**
-
-✔ Create a **PostgreSQL schema with multiple tables using primary and foreign keys**.
-
-✔ Implement **Materialized Views and compare their performance with normal views**.
+- What is PostgreSQL? How is it different from MySQL / other RDBMS?
+- PostgreSQL vs MySQL — key differences (ACID, data types, performance)
+- Data types — Numeric (INT, BIGINT, NUMERIC, SERIAL), Character (VARCHAR, TEXT), Boolean
+- Date/Time types — DATE, TIME, TIMESTAMP, TIMESTAMPTZ, INTERVAL
+- Special types — UUID, ARRAY, JSONB, ENUM, hstore, Geometric
+- Schema, Tables, Constraints — PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, NOT NULL, DEFAULT
+- Normalization — 1NF, 2NF, 3NF, BCNF and when to denormalize
+- Views — creating, updating, dropping
+- Materialized Views — vs regular views, REFRESH MATERIALIZED VIEW, CONCURRENTLY
+- Temporary Tables — session scope, transaction scope
+- Stored Procedures vs Functions — differences, when to use each
+- Triggers — BEFORE / AFTER / INSTEAD OF, row-level vs statement-level
+- Sequences — SERIAL vs BIGSERIAL vs GENERATED ALWAYS AS IDENTITY
 
 ---
 
-## **🔥 2. PostgreSQL Architecture & Internals**
+## 🏗️ **2. Architecture & Internals**
 
-### **Core Topics**
-
-✅ **PostgreSQL Process Model (Backend Process, Autovacuum, WAL Writer, Checkpointer, Background Writer)**
-
-✅  PostgreSQL Memory Architecture 
-
-✅ **PostgreSQL Storage (Heap Storage, TOAST, Tablespaces, Block Storage)**
-
-✅ **How PostgreSQL Executes Queries (Parsing → Planning → Optimization → Execution)**
-
-✅ How writes and reads happens internally in postgres
-
-✅ **Multi-Version Concurrency Control (MVCC) & Tuple Visibility**
-
-✅ **Write-Ahead Logging (WAL) & Crash Recovery**
-
-### **Practice Questions**
-
-1️⃣ What is **MVCC, and how does PostgreSQL handle concurrent transactions?**
-
-2️⃣ How does **PostgreSQL recover from a system crash using WAL?**
-
-3️⃣ What are **TOAST tables, and when are they used?**
-
-### **Hands-On Practice**
-
-✔ Monitor **PostgreSQL background processes using system tools**.
-
-✔ Observe **how PostgreSQL manages dead tuples using autovacuum**.
+- PostgreSQL process model — Postmaster, Backend Process, WAL Writer, Checkpointer, Background Writer, Autovacuum
+- Memory architecture — Shared Buffers, Work Mem, Maintenance Work Mem, WAL Buffers
+- Storage internals — Heap storage, page/block structure, TOAST (large value storage)
+- How a query executes — Parsing → Rewriting → Planning → Execution
+- MVCC (Multi-Version Concurrency Control) — how it works, tuple versions, xmin/xmax
+- Write-Ahead Logging (WAL) — purpose, how it enables crash recovery and replication
+- Checkpoints — what they are, how they flush dirty pages
+- Dead tuples — why they accumulate, how autovacuum cleans them
+- HOT (Heap-Only Tuple) updates — when PostgreSQL avoids index updates
+- TOAST — when it kicks in, compression, external storage
 
 ---
 
-## **🔥 3. PostgreSQL Indexing & Performance Optimization**
+## 📑 **3. Indexing**
 
-### **Core Topics**
-
-✅ **Types of Indexes (B-Tree, Hash, BRIN, GIN, GiST, SP-GiST)**
-
-✅ **Covering Indexes, Partial Indexes, Expression Indexes, Composite Indexes**
-
-✅ **PostgreSQL EXPLAIN & EXPLAIN ANALYZE for Query Optimization**
-
-✅ **Autovacuum, Analyze, and Reindex (How to Prevent Bloat)**
-
-✅ HOT Tuples
-
-### **Practice Questions**
-
-1️⃣ What is **the difference between B-Tree, GIN, and BRIN indexes?**
-
-2️⃣ How does **PostgreSQL decide the best execution plan for a query?**
-
-3️⃣ What are **Index-Only Scans, and when are they used?**
-
-### **Hands-On Practice**
-
-✔ Optimize **a slow query using different indexing strategies**.
-
-✔ Use **EXPLAIN ANALYZE to understand query execution plans**.
+- B-Tree index — default, use cases (equality + range queries)
+- Hash index — equality-only, when faster than B-Tree
+- GIN index — full-text search, JSONB, arrays (multiple values per row)
+- GiST index — geometric data, fuzzy search, range types
+- BRIN index — very large tables with physically ordered data (e.g. timestamps)
+- SP-GiST index — non-balanced tree structures, IP addresses, phone numbers
+- Partial index — index only a subset of rows (`WHERE status = 'active'`)
+- Expression / Functional index — index on a function result (`LOWER(email)`)
+- Composite (multi-column) index — column order matters, left-most prefix rule
+- Covering index — `INCLUDE` columns for index-only scans
+- Index-Only Scan — when it happens, visibility map requirement
+- EXPLAIN — reading output: Seq Scan, Index Scan, Index Only Scan, Bitmap Scan
+- EXPLAIN ANALYZE — actual time vs estimated, actual rows vs planned rows
+- Bloated indexes — how they happen, REINDEX, REINDEX CONCURRENTLY
+- When NOT to index — low-cardinality columns, small tables
 
 ---
 
-## **🔥 4. PostgreSQL Transactions & Concurrency Control**
+## 🔄 **4. Transactions & Concurrency**
 
-### **Core Topics**
-
-✅ **ACID Compliance & Transaction Isolation Levels**
-
-✅ **Deadlocks in PostgreSQL (Detection, Prevention, and Resolution)**
-
-✅ **Row-Level Locks, Table Locks, Advisory Locks**
-
-✅ **PostgreSQL Locking Strategies (Optimistic vs Pessimistic Locking)**
-
-✅ **Savepoints & Nested Transactions**
-
-### **Practice Questions**
-
-1️⃣ What is **the difference between Read Committed and Serializable isolation levels?**
-
-2️⃣ How does **PostgreSQL handle deadlocks, and how can you avoid them?**
-
-3️⃣ What is **an Advisory Lock, and when should you use it?**
-
-### **Hands-On Practice**
-
-✔ Simulate **deadlocks and analyze their resolution using pg_stat_activity**.
-
-✔ Implement **Optimistic and Pessimistic Locking in a multi-threaded environment**.
+- ACID — Atomicity, Consistency, Isolation, Durability
+- Transaction basics — BEGIN, COMMIT, ROLLBACK, SAVEPOINT
+- Isolation levels — Read Uncommitted, Read Committed (default), Repeatable Read, Serializable
+- Dirty read, Non-repeatable read, Phantom read — which level prevents which
+- Row-level locks — FOR UPDATE, FOR SHARE, FOR NO KEY UPDATE, FOR KEY SHARE
+- Table-level locks — ACCESS SHARE, ROW EXCLUSIVE, ACCESS EXCLUSIVE
+- Advisory locks — application-level locking with `pg_advisory_lock`
+- Deadlocks — how they happen, PostgreSQL auto-detection, error message, prevention
+- Optimistic locking — version column pattern, no database lock
+- Pessimistic locking — SELECT FOR UPDATE, use cases
+- SKIP LOCKED — queue/job processing pattern
+- `pg_stat_activity` — monitoring active connections and locks
 
 ---
 
-## **🔥 5. Query Optimization & Execution Planning**
+## ⚡ **5. Query Optimization & Performance**
 
-### **Core Topics**
-
-✅ **Join Algorithms (Nested Loop, Hash Join, Merge Join, Parallel Hash Join)**
-
-✅ **CTEs (Common Table Expressions) vs Subqueries vs Temporary Tables**
-
-✅ **Parallel Query Execution & Parallel Index Scans**
-
-### **Practice Questions**
-
-1️⃣ What is **the difference between Hash Join, Merge Join, and Nested Loop Join?**
-
-2️⃣ How does **PostgreSQL decide the best execution plan for a query?**
-
-### **Hands-On Practice**
-
-✔ Analyze **execution plans of different join types on large datasets**.
+- EXPLAIN vs EXPLAIN ANALYZE vs EXPLAIN (BUFFERS)
+- Sequential Scan vs Index Scan — when each is chosen
+- Join types — Nested Loop, Hash Join, Merge Join — when PostgreSQL picks each
+- CTEs (WITH clause) — optimization fence (pre-PG12), inlining (PG12+), RECURSIVE CTEs
+- Subqueries vs JOINs vs CTEs — performance tradeoffs
+- Window functions — RANK, ROW_NUMBER, DENSE_RANK, LAG, LEAD, SUM OVER, PARTITION BY
+- Aggregation — GROUP BY, HAVING, DISTINCT, DISTINCT ON
+- Pagination — LIMIT/OFFSET problems at scale, keyset pagination alternative
+- Statistics — pg_stats, ANALYZE, how the planner uses statistics
+- Vacuum — VACUUM vs VACUUM FULL vs AUTOVACUUM — differences and when to use
+- N+1 query problem — how to identify and fix
+- Avoiding full table scans — conditions that break index usage (functions on columns, implicit casts)
+- Connection pooling — why needed, PgBouncer (session vs transaction mode), `pg.Pool` in Node.js
+- `work_mem`, `shared_buffers`, `effective_cache_size` — what they do, how to tune
 
 ---
 
-## **🔥 6. Partitioning & Sharding in PostgreSQL**
+## 🔀 **6. Partitioning & Sharding**
 
-### **Core Topics**
-
-✅ **Table Partitioning (Range Partitioning, List Partitioning, Hash Partitioning)**
-
-✅ **Sharding Strategies (PgBouncer, CitusDB, PL/Proxy)**
-
-✅ **PostgreSQL Replication & High Availability (Streaming Replication, Logical Replication)**
-
-### **Practice Questions**
-
-1️⃣ How does **partitioning improve query performance?**
-
-2️⃣ What is **the difference between Partitioning and Sharding?**
-
-### **Hands-On Practice**
-
-✔ Implement **Partitioning on a large dataset and compare performance with non-partitioned tables**.
+- Table partitioning — why use it, when it helps
+- Range partitioning — `PARTITION BY RANGE (created_at)` — good for time-series data
+- List partitioning — `PARTITION BY LIST (region)` — good for category/country splits
+- Hash partitioning — `PARTITION BY HASH (user_id)` — even distribution
+- Partition pruning — how PostgreSQL skips irrelevant partitions at query time
+- Partition indexes — local vs global indexes
+- Partitioning vs Sharding — differences, use cases
+- Sharding strategies — PgBouncer, CitusDB for horizontal scaling
+- Foreign Data Wrappers (FDW) — querying external databases from PostgreSQL
 
 ---
 
-## **🔥 7. PostgreSQL Caching & Performance Tuning**
+## 🔁 **7. Replication & High Availability**
 
-### **Core Topics**
-
-✅ **PostgreSQL Shared Buffers & Kernel Page Cache**
-
-✅ **PostgreSQL Configuration for High Performance (work_mem, effective_cache_size, maintenance_work_mem)**
-
-✅ **Connection Pooling (PgBouncer vs HikariCP for Connection Management)**
-
-### **Practice Questions**
-
-1️⃣ What is **the role of Shared Buffers in PostgreSQL, and how does it impact performance?**
-
-### **Hands-On Practice**
-
-✔ Optimize **PostgreSQL configuration for high throughput**.
+- Streaming Replication — WAL-based, physical copy, same major version required
+- Logical Replication — row-level changes, selective tables, cross-version support
+- Replication slots — prevent WAL deletion before replica consumes
+- Read replicas — offloading read queries, connection routing
+- Synchronous vs asynchronous replication — tradeoff between safety and performance
+- Failover — Patroni, repmgr, Stolon — automatic promotion
+- Point-in-Time Recovery (PITR) — WAL archiving to restore DB to any past moment
+- pg_basebackup — taking a base backup for standby setup
 
 ---
 
-## **🔥 8. PostgreSQL JSON & Full-Text Search**
+## 🔍 **8. JSONB & Full-Text Search**
 
-### **Core Topics**
-
-✅ **PostgreSQL JSONB (Storage, Indexing, Querying, Performance Considerations)**
-
-✅ **Full-Text Search using PostgreSQL (tsvector, tsquery, GIN Indexes)**
-
-### **Practice Questions**
-
-1️⃣ What is **the difference between JSON and JSONB in PostgreSQL?**
-
-### **Hands-On Practice**
-
-✔ Implement **Full-Text Search on a large dataset using tsvector and GIN indexes**.
+- JSON vs JSONB — storage differences, performance, indexing support
+- JSONB operators — `->`, `->>`, `#>`, `@>` (containment), `?` (key exists)
+- JSONB indexing — GIN index, `jsonb_path_ops` for containment queries
+- Querying nested JSONB — `jsonb_array_elements`, `jsonb_each`
+- Full-Text Search — `tsvector`, `tsquery`, `to_tsvector`, `to_tsquery`
+- Full-text ranking — `ts_rank`, `ts_rank_cd`
+- Full-text GIN index — fast text search on large tables
+- `pg_trgm` — trigram-based fuzzy search (`LIKE '%keyword%'` with index)
 
 ---
 
-## **🔥 9. PostgreSQL High Availability & Scalability**
+## 🧰 **9. Practical SQL to Know**
 
-### **Core Topics**
-
-✅ **Streaming Replication vs Logical Replication**
-
-✅ **Failover & Load Balancing (Patroni, Stolon, Repmgr)**
-
-✅ **Read-Replicas & Write-Write for Scaling Reads in PostgreSQL**
-
-### **Practice Questions**
-
-1️⃣ What is **the difference between Streaming and Logical Replication?**
-
-### **Hands-On Practice**
-
-✔ Set up **a read-replica and test query performance improvements**.
+- SELECT, INSERT, UPDATE, DELETE, UPSERT (`ON CONFLICT DO UPDATE`)
+- JOINs — INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF JOIN
+- Second highest value — `ORDER BY DESC LIMIT 1 OFFSET 1` or subquery
+- Find duplicates — `GROUP BY ... HAVING COUNT(*) > 1`
+- DELETE vs TRUNCATE vs DROP — differences (rollback, triggers, speed)
+- Recursive CTEs — tree traversal (org charts, categories)
+- Lateral joins — `JOIN LATERAL` — correlated subquery as a join
+- COPY command — bulk import/export CSV to/from table
+- `pg_dump` / `pg_restore` — backup and restore
+- `pg_stat_user_tables` — dead tuples, sequential scans, index usage stats
 
 ---
 
-## **🔥 Final Steps: FAANG-Level PostgreSQL Mastery**
+## 🎓 **10. Capstone Practice**
 
-🚀 **To Crack FAANG Interviews**, focus on:
+- Optimize a slow query — identify with EXPLAIN ANALYZE, add correct index
+- Build a partitioned table for 100M+ rows time-series data
+- Implement full-text search on a products table using tsvector + GIN
+- Set up streaming replication and a read replica locally
+- Simulate a deadlock and observe PostgreSQL's auto-resolution
+- Build a JSONB-backed flexible product attributes system
+- Implement keyset pagination on a large table
 
-✅ **Query Optimization & Execution Plans**
+---
 
-✅ **Indexing Strategies & Performance Tuning**
-
-✅ **Concurrency Control & Transactions**
-
-✅ **Partitioning, Sharding, and High Availability**
-
-✅ **Debugging Slow Queries & Performance Bottlenecks**
-
-🔥 **This roadmap covers everything needed for FAANG+ PostgreSQL interviews.**
+## Links
+- [[Study Plan/MySQL]] — MySQL questions
+- [[Study Plan/MongoDB]] — MongoDB questions
+- [[Study Plan.md]] — back to main plan
