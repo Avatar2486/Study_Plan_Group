@@ -24,6 +24,9 @@ This is your personal knowledge base — built around your resume, your stack, a
 | [[Comm Improvemts/Communication Tips]] | STAR method, email writing, vocabulary |
 | [[Project Ideas/Ideas]] | 10 project ideas matching your stack |
 | [[Study Plan]] | Technical learning — DSA, Node, Python, AI/ML, Cloud |
+| [[Study Plan/Progress Tracker]] | Track status + confidence for every topic |
+| [[Study Plan/Study Log]] | Log what you covered each session |
+| [[Templates/README]] | Reusable templates — add any new topic or answer bank |
 
 ---
 
@@ -39,10 +42,12 @@ This is your personal knowledge base — built around your resume, your stack, a
 
 ## When You're Learning (Quick Path)
 
-1. Open [[Study Plan]] — pick your topic
-2. For AI/ML: [[Study Plan/AI ML]]
-3. For building with AI tools: [[Study Plan/AI Tools]]
-4. For project ideas: [[Project Ideas/Ideas]]
+1. Open [[Study Plan/Progress Tracker]] — see what's done, what's next
+2. Pick a topic → read the topic file → then its Answer Bank file
+3. After each session → log it in [[Study Plan/Study Log]]
+4. For AI/ML: [[Study Plan/AI ML]]
+5. For building with AI tools: [[Study Plan/AI Tools]]
+6. For project ideas: [[Project Ideas/Ideas]]
 
 ---
 

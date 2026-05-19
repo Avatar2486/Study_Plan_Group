@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Job Webistes/Automate Apply Job/Guide.md",
+                "file": "Project Ideas/Ideas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Guide"
+              "title": "Ideas"
             }
           }
         ]
@@ -180,35 +180,36 @@
       "bases:Create new base": false
     }
   },
-  "active": "c82d9db0a5e5eba1",
+  "active": "24ae955b0bb7d4d6",
   "lastOpenFiles": [
+    "Templates/README.md",
+    "Templates/New Answer Bank.md",
+    "Templates/New Topic.md",
+    "Templates",
+    "Study Plan/Study Log.md",
+    "Study Plan/Progress Tracker.md",
+    "Job Webistes/Automate Apply Job/Guide.md",
+    "Job Webistes/List Of Job Portals.md",
+    "Interview/Mock Interview WebPage/Resources.md",
+    "HR Connections/Tracker.md",
+    "HR Connections/Templates.md",
+    "Comm Improvemts/Communication Tips.md",
+    "About Me/Profile.md",
+    "Study Plan/Answer Bank/Node JS.md",
+    "Study Plan/Answer Bank/AWS.md",
     "Study Plan/Answer Bank/Angular.md",
     "Study Plan/Angular.md",
     "Study Plan/Answer Bank/Microservices.md",
     "Study Plan/Answer Bank/HLD.md",
     "Study Plan/Answer Bank/LLD.md",
     "Study Plan/Answer Bank/ReactJS.md",
-    "Study Plan/Answer Bank/AWS.md",
     "Study Plan/Answer Bank/Kubernetes.md",
     "Study Plan/Answer Bank/Kafka.md",
     "Study Plan/Answer Bank/Redis.md",
     "Study Plan/Answer Bank/Docker.md",
     "Study Plan/Answer Bank/MongoDB.md",
     "Study Plan/Answer Bank/MySQL.md",
-    "Study Plan/Answer Bank/PostgreSQL.md",
-    "Study Plan/Answer Bank/Node JS.md",
-    "Study Plan/Answer Bank/JavaScript.md",
-    "Study Plan/Answer Bank/Python.md",
     "Study Plan/Answer Bank",
-    "Job Webistes/List Of Job Portals.md",
-    "Interview/Self Interview/Role Based Intros.md",
-    "Interview/Self Interview/HR Questions.md",
-    "Interview/Mock Interview WebPage/Resources.md",
-    "HR Connections/Tracker.md",
-    "HR Connections/Templates.md",
-    "Comm Improvemts/Communication Tips.md",
-    "About Me/Profile.md",
-    "Study Plan/AI Tools.md",
     "Study Plan/Interview Answers",
     "ABHISHEKMANISHCHANDRADUBEY.pdf",
     "Comm Improvemts",
@@ -217,7 +218,6 @@
     "Interview/Self Interview",
     "Interview/Mock Interview WebPage",
     "Job Webistes/Automate Apply Job",
-    "Job Webistes",
     "Untitled.canvas"
   ]
 }

@@ -66,6 +66,63 @@
 
 ---
 
+## High Impact — New Addition
+
+### 11. DevNotes — Hosted Knowledge Base for Developers (and Anyone)
+
+**The Problem:**
+Obsidian is local-only. Notion is too generic. Confluence is corporate. There's no self-hosted, developer-first notes platform where you own your data, your notes stay live on a server, and you get real developer tools baked in — not just text.
+
+**The Idea:**
+A hosted notes platform where users write and store notes on your server, always accessible from anywhere. Built with a developer-first mindset but usable by anyone.
+
+**Core Features (Phase 1 — MVP):**
+- Markdown editor (real-time preview, syntax highlighting)
+- Folder / workspace structure with wikilinks `[[note-name]]`
+- Notes stored in your PostgreSQL/MongoDB backend — always online
+- Auth (JWT) — personal workspaces, optionally share notes publicly
+- Tag system + full-text search (ElasticSearch or pg full-text)
+- REST + WebSocket API — live collaboration or multi-device sync
+
+**Developer-First Features (Phase 2):**
+- **Code blocks with live execution** — run JS/Python snippets directly in the note (sandboxed via Docker or Piston API)
+- **Mermaid / D3.js diagrams** — write diagram-as-code, see rendered graph
+- **Chart blocks** — embed live charts (Chart.js / Recharts) driven by inline JSON data
+- **HTML blocks** — raw HTML rendered in a sandboxed iframe
+- **Database table view** — create a table in a note that is actually backed by a real DB table (like Notion's database but for devs)
+- **API call block** — define a REST call inline, see response rendered in the note
+
+**Keep Notes Active (Phase 3):**
+- Scheduled note "nudges" — if a note hasn't been updated in 30 days, remind the user via email/push
+- Note health score — flags outdated links, stale code snippets, broken embeds
+- Version history — see every edit, diff view like GitHub
+- GitHub sync — push/pull note folder to a GitHub repo
+
+**Stack:**
+- **Frontend:** Angular (your primary framework) — Monaco editor for code, Mermaid.js, Chart.js
+- **Backend:** Node.js + Express/Fastify — REST API + WebSocket (Socket.io) for live sync
+- **Execution sandbox:** Docker containers (Piston API) for safe code execution
+- **Storage:** PostgreSQL (notes metadata, users, tags) + S3/MinIO (file attachments)
+- **Search:** PostgreSQL full-text OR ElasticSearch for fast note search
+- **Auth:** JWT + refresh tokens, optional OAuth (GitHub login makes sense for devs)
+- **Infra:** Docker Compose locally → AWS EC2 + RDS + S3 in production
+
+**Why This is Good for You:**
+- Touches your entire stack in one project — Angular, Node, PostgreSQL, Docker, AWS, S3, WebSockets, Redis (for caching/pub-sub)
+- Deployable and usable — you can use it yourself (like this Obsidian vault, but hosted)
+- Extensible — add AI features later: "summarize this note", "find related notes", "auto-tag"
+- Strong portfolio story: "I built a dev-focused Notion alternative with live code execution and diagram support"
+
+**Build Order:**
+1. Auth + basic CRUD notes with Markdown preview
+2. Folder structure + search
+3. Mermaid diagrams + Chart.js blocks
+4. Code execution sandbox (Piston API — easiest)
+5. GitHub sync + version history
+6. Note health nudges + reminders
+
+---
+
 ## Notes
 - Star the ones you want to build
 - Start with #4 or #1 if you want portfolio impact fast

@@ -6,6 +6,14 @@
 
 🔗 [**LinkedIn**](https://www.linkedin.com/in/abhishek-dubey--dev) — Let’s connect, collaborate, or talk systems!
 
+### 📌 Track Your Progress
+
+[Progress Tracker](Study%20Plan/Progress%20Tracker.md) — status + confidence for every topic
+
+[Study Log](Study%20Plan/Study%20Log.md) — log each session, pick up where you left off
+
+---
+
 ### 📌 Topics
 
 [Resume Tips](Resume%20Tips.md)
